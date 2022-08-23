@@ -1,3 +1,5 @@
+//Pramodh Krishna
+//Linked List and merging of two linked lists
 #include<stdio.h>
 #include<malloc.h>
 #include<stdbool.h>
@@ -5,9 +7,9 @@
 struct node{
     int data;
     struct node* next;
-}*head, *tail, *nw, *temp, *temp1;
+}*head, *tail, *nw, *temp, *temp1, *head1, *tail1;
 
-int n; 
+int n, n1; 
 
 void creation();
 void insertion();
@@ -17,6 +19,7 @@ bool isEmpty();
 void makeEmpty();
 void search();
 void count();
+void merge();
 
 int main()
 {
@@ -25,9 +28,10 @@ int main()
     nw->next = NULL;
     int l = 1;
     n = 0;
+    n1 = 0;
     int choice;
     while (l == 1){
-        printf("\n1.creation\n2.insertion\n3.deletion\n4.display\n5.count\n6.search\n7.empty\n8.exit\n");
+        printf("\n1.creation\n2.insertion\n3.deletion\n4.display\n5.count\n6.search\n7.empty\n8.merge\n9.exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -54,10 +58,13 @@ int main()
             makeEmpty();
             break;
         case 8:
+            merge();
+            break;
+        case 9:
             l = 0;
             break;
         default:
-            printf("Number between 1 and ");
+            printf("Number between 1 and 9");
             break;
         }
     }
@@ -82,6 +89,31 @@ void creation(){
         tail->next = nw;
         nw->next = NULL;
         tail = nw;
+    }
+    }
+}
+
+void creation1(){
+    nw = (struct node*) malloc(sizeof(struct node));
+    nw->next = NULL;
+    nw->data = 0;
+    int item, i;
+    printf("Enter number of nodes to create: ");
+    scanf("%d", &n1);
+    for (i = 0; i < n1; i++){
+    printf("Enter the item: ");
+    scanf("%d", &item);
+    if (nw->data == 0){
+        nw->data = item;
+        head1 = nw;
+        tail1 = nw;
+    }
+    else{
+        nw = (struct node*) malloc(sizeof(struct node));
+        nw->data = item;
+        tail1->next = nw;
+        nw->next = NULL;
+        tail1 = nw;
     }
     }
 }
@@ -180,6 +212,7 @@ void makeEmpty(){
     tail = head;
     head->data = 0;
     head->next = NULL;
+    nw = head;
     n = 0;
 }
 
@@ -204,4 +237,17 @@ void search(){
         printf("Item not found\n");
     }
     
+}
+
+
+void merge() {
+    int i;
+    printf("To merge 2 linked lists first create the other list: \n");
+    creation1();
+    tail->next = head1;
+    tail = tail1;
+    tail1 = NULL;
+    head1 = NULL;
+    tail->next = NULL;
+    n += n1;
 }
