@@ -1,7 +1,6 @@
 //Pramodh Krishna
 //2 stacks filled in 1 array from opp ends
-//Input - Whatever console asks
-//output - depends on console 
+
 #include <stdio.h>
 struct Twostacks{
     int a[10];
