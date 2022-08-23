@@ -1,5 +1,6 @@
 //Pramodh Krishna 
-//21BIT0510
+//utilises circular queues using a global count variable to check for space
+
 #include<stdio.h>
 #define size 5
 
