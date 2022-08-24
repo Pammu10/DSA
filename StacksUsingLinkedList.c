@@ -1,5 +1,5 @@
 //Pramodh Krishna
-//Stacks using Linked List
+//Stacks using Linked
 
 #include<stdio.h>
 #include<malloc.h>
