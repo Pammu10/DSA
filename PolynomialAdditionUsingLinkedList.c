@@ -1,5 +1,4 @@
 //Pramodh Krishna
-//21BIT0510
 //Polynomial Addition Using Linked List
 
 #include<stdio.h>
