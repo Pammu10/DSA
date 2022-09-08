@@ -1,5 +1,4 @@
 //Pramodh Krishna
-//21BIT0510
 //Queues using Linked List
 
 #include<stdio.h>
