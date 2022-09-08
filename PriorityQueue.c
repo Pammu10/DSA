@@ -1,3 +1,6 @@
+//Pramodh Krishna 
+//Priority Queue using linked list
+
 #include<stdio.h>
 #include<malloc.h>
 
