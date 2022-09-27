@@ -1,5 +1,5 @@
 //Pramodh Krishna
-//Bubble sort
+//Bubble sort having time complexity O(n^2)
 
 #include<stdio.h>  
 
