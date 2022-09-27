@@ -1,5 +1,5 @@
 //Pramodh Krishna 
-//queue
+//Queue
 
 #include<stdio.h>
 #define size 5
