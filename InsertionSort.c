@@ -8,7 +8,7 @@ void insertion_sort(int arr[], int n){
    for (i = 1; i < n; i++){
       int temp = arr[i];
       for (j = 0; j < i; j++){
-         while (temp < arr[j]){
+        if (arr[i] < arr[j]){
             int k;
             for (k = i; k > j; k--){
                arr[k] = arr[k - 1];
