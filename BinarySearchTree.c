@@ -1,4 +1,4 @@
-//Pramod Krishna
+//Pramodh Krishna
 //Binary search tree
 
 #include<stdio.h>  
