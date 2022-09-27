@@ -1,4 +1,4 @@
-//Pramodh 
+//Pramodh Krishna
 //Insertion Sort having time complexity 0(n^2)
 
 #include<stdio.h>  
