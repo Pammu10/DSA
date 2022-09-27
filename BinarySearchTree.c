@@ -129,12 +129,15 @@ int main(){
          break;
       case 4:
          inorder(lw);
+	 printf("\n");
          break;
       case 5:
          preorder(lw);
+         printf("\n");
          break;
       case 6:
          postorder(lw);
+         printf("\n");
          break;
       case 7:
          l = 1;
