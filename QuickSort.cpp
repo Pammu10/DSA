@@ -1,48 +1,54 @@
 //Pramodh Krishna
-//Quick Sort
-#include<iostream>
-using namespace std;
+//Quick Sort having time complexity O(nlogn)
 
+#include<stdio.h>
 
-int split(int a[], int lower, int upper){
-    int temp;
-    int pivot = a[lower];
+int split(int arr[], int lower, int upper){
+    int pivot = arr[lower];
     int newlower = lower;
-    int newupper = upper;
+    int newupper =upper;
     while (newlower < newupper){
-        while (a[newlower] <= pivot) 
+        while(arr[newlower] <= pivot)
             newlower++;
-        while (a[newupper] > pivot)
+        
+        while (arr[newupper] > pivot)
             newupper--;
+
         if (newlower < newupper){
-            temp = a[newlower];
-            a[newlower] = a[newupper];
-            a[newupper] = temp;
+            int temp = arr[newlower];
+            arr[newlower] = arr[newupper];
+            arr[newupper] = temp;
         }
     }
-    a[lower] = a[newupper];
-    a[newupper] = pivot;
+    arr[lower] = arr[newupper];
+    arr[newupper] = pivot;
     return newupper;
 }
-void quick_sort(int a[], int lower, int upper){
+
+void quick_sort(int arr[], int lower, int upper){
     if (lower < upper){
-        int i = split(a, lower, upper);
-        quick_sort(a, lower, i -1);
-        quick_sort(a, i + 1, upper); 
-    }   
+        int i = split(arr, lower, upper);
+        quick_sort(arr, lower, i - 1);
+        quick_sort(arr, i + 1, upper);   
+    }
 }
 
-int main()
-{
-    int arr[] = {45, 19, 11, 62, 40, 80, 9, 100};
-    int n = sizeof(arr)/sizeof(arr[0]);
+int main(){
+    int n, item;
+    printf("Enter number of elements in your array: ");
+    scanf("%d", &n);
+    int arr[n];
     for (int i = 0; i < n; i++){
-        cout << arr[i] << "\t";
+        scanf("%d", &arr[i]);
     }
-    cout << endl;
-    quick_sort(arr, 0, n - 1);
+    printf("Array before sorting\n");
     for (int i = 0; i < n; i++){
-        cout << arr[i] << "\t";
+        printf("%d ", arr[i]);
+    }
+    quick_sort(arr, 0, n-1);
+    printf("\nArray after sorting\n");
+    for (int i = 0; i< n; i++){
+        printf("%d ", arr[i]);
     }
     return 0;
 }
