@@ -36,7 +36,7 @@ void count_sort(int a[], int n){
 int main()
 {
    int n;
-   printf("Enter the number of elemnets in your array: ");
+   printf("Enter the number of elements in your array: ");
    scanf("%d", &n);
    int a[n];
    for (int i = 0; i < n; i++){
