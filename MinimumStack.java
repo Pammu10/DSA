@@ -1,4 +1,25 @@
 import java.util.*;
+
+public class MinimumStack {
+	public static void main(String args[]) {
+		Mystack s=new Mystack();
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		for( int i=0;i<n;i++) {
+			int m=sc.nextInt();
+			s.push(m);
+		} 
+        sc.close();
+        s.getMin();
+        s.pop();
+        s.getMin();
+        s.pop();
+        s.peek();
+        }
+
+    }
+
+
 class Mystack {
 	Stack<Integer> s;
 	Stack<Integer> a;
@@ -28,8 +49,8 @@ class Mystack {
         }
         else 
             System.out.println("Removed element : " + t);
-            if( t == a.peek() )
-		a.pop();
+        if( t == a.peek() )
+			a.pop();
 }
 void push(int x) {
 	if ( s.isEmpty()) {
@@ -46,22 +67,24 @@ void push(int x) {
 		a.push(x);
 	}
 };
-public class MinimumStack {
-	public static void main(String args[]) {
-		Mystack s=new Mystack();
-		Scanner sc = new Scanner(System.in);
-		int n=sc.nextInt();
-		for( int i=0;i<n;i++) {
-			int m=sc.nextInt();
-			s.push(m);
-		} 
-        sc.close();
-        s.getMin();
-        s.pop();
-        s.getMin();
-        s.pop();
-        s.peek();
-        }
-        
-    }
-    
+
+// Output 
+
+// 6
+// 3
+//  Number Inserted: 3
+// 24
+//  Number Inserted: 24
+// 6
+//  Number Inserted: 6
+// 4
+//  Number Inserted: 4
+// 3
+//  Number Inserted: 3
+// 7
+//  Number Inserted: 7
+// Minimum element : 3
+// Removed element : 7
+// Minimum element : 3
+// Removed element : 3
+// Top most element:4
