@@ -1,5 +1,3 @@
-
-
 public class SegregateEvenOddLinkedList {
 
     static ListNode head, tail;

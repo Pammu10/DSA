@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LoopDetectionInLinkedList {
     static class Node {
         public int data;
@@ -5,23 +7,62 @@ public class LoopDetectionInLinkedList {
 
         public Node(int data) {
             this.data = data;
+            this.next = null;
         }
 
-        public void addNode(int data) {
-
-        }
 
     }
+    static Node insertNode(Node head, int data){
+        Node newNode = new Node(data);
+       if (head == null){
+        head  = newNode;
+        return head;
+        }
+        Node tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        tmp.next = newNode;
+        return head;
+    }
+
+    static void display(Node head){
+        Node temp = head;
+        while (temp.next != null){
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.println(temp.data + "-> NULL");
+    }
+
+    static void CreateCycle(Node head, int a, int b){
+        int cnta = 0;
+        int cntb = 0;
+        Node p1 = head;
+        Node p2 = head;
+        while (cnta != a || cntb != b){
+            if (cnta != a){
+                p1 = p1.next;
+                ++cnta;
+            }
+            if (cntb != b){
+                p2 = p2.next;
+                ++cntb;
+            }
+            p2.next = p1;
+        }
+    }   
 
     public static boolean detecytCycle(Node head) {
+        if (head == null) return false;
         Node slow = head;
         Node fast = head;
-        while (fast != null && fast.next != null) {
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             System.out.print("slow: " + slow.data);
             System.out.println(" fast : " + fast.data);
-            if (slow.data == fast.data) {
+            if (slow == fast) {
                 return true;
             }
         }
@@ -29,24 +70,23 @@ public class LoopDetectionInLinkedList {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        Node second = new Node(2);
-        Node third = new Node(3);
-        Node fourth = new Node(4);
-        Node fifth = new Node(5);
-
-        head.next = second;
-        second.next = third;
-        third.next = fourth;
-        fourth.next = fifth;
-        // Create a loop
-        fifth.next = third;
-
-        if (detecytCycle(head)) {
-            System.out.println("Cycle detected");
-        } else {
-            System.out.println("Cycle undetected");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Node head = null;
+        for (int i = 0; i < n; i++){
+            int data = sc.nextInt();
+           head = insertNode(head, data); 
         }
+        display(head);  
+        int a = sc.nextInt();
+        CreateCycle(head, 1, a);
+        if (detecytCycle(head) == true){
+            System.out.println("Cycle exists");
+        }
+        else {
+            System.out.println("Cycle does'nt exist");
+        }
+        
     }
 
 }
