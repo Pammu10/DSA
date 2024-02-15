@@ -9,8 +9,8 @@ public class SortWithoutExtraSpace {
 	int s = list.size(); 
 	for (int i = 0; i < s; i++) 
 	{ 
-		int current = list.peek(); 
-		list.poll(); 
+		int current = list.poll();  
+		
 		if (current <= min_value && i <= sortIndex) 
 		{ 
 			min_index = i; 
@@ -25,8 +25,8 @@ public static void insertMinToRear(Queue<Integer> list, int min_index) {
     int s = list.size(); 
     for (int i = 0; i < s; i++) 
     { 
-    int current = list.peek(); 
-    list.poll(); 
+    int current = list.poll(); 
+    
     if (i != min_index) 
         list.add(current); 
     else
@@ -52,8 +52,8 @@ public static void main (String[] args)
 		sortQueue(list); 
 		while(list.isEmpty()== false) 
 		{ 
-			System.out.print(list.peek() + " "); 
-			list.poll(); 
+			System.out.print(list.poll() + " "); 
+			 
 		} 
 	} 
 } 

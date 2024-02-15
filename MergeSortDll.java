@@ -1,4 +1,3 @@
-
 public class MergeSortDll {
     static void addNode(int data) {
         Node newNode = new Node(data);

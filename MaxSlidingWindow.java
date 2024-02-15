@@ -3,7 +3,7 @@ import java.util.*;
 public class MaxSlidingWindow {
     static void findMax(int arr[], int n, int k){
         int maxSum;
-        for (int i = 0; i < n - k; i++){
+        for (int i = 0; i <= n - k; i++){
             maxSum = arr[i];
             for (int j = 1; j < k; j++){
                 if (arr[i+j] > maxSum) {
@@ -37,4 +37,4 @@ public class MaxSlidingWindow {
 // 3
 // 2 4 7 12 6 8 4 1
 
-// 7 12 12 12 8
+// 7 12 12 12 8 8
