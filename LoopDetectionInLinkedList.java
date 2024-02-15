@@ -79,6 +79,7 @@ public class LoopDetectionInLinkedList {
         }
         display(head);  
         int a = sc.nextInt();
+        sc.close();
         CreateCycle(head, 1, a);
         if (detecytCycle(head) == true){
             System.out.println("Cycle exists");

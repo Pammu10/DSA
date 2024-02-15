@@ -58,6 +58,7 @@ class Main{
         Scanner us=new Scanner(System.in);
         int num_of_disks = us.nextInt();
         Main ob = new Main();
+        us.close();
         Stack source, destination, auxillary;
         source = ob.createStack(num_of_disks);
         destination = ob.createStack(num_of_disks);
@@ -70,14 +71,14 @@ class Main{
             a = temp;}
         total_num_of_moves = (int)(Math.pow(2, num_of_disks) - 1);
         for(int i = num_of_disks; i >= 1; i--)
-            ob.push(source, i);
+            push(source, i);
         for(int i = 1; i <= total_num_of_moves; i++){
             if (i % 3 == 1)
-                ob.move_disc(source, destination, s, d);
+                move_disc(source, destination, s, d);
             else if (i % 3 == 2)
-                ob.move_disc(source, auxillary, s, a);
+                move_disc(source, auxillary, s, a);
             else if (i % 3 == 0)
-                ob.move_disc(auxillary, destination, a, d);
+                move_disc(auxillary, destination, a, d);
         }
         }
         }        

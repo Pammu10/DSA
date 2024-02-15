@@ -67,6 +67,7 @@ else if (root.data < data)
                     root = insert(root, input);
                     input = sc.nextInt();      
 	   }
+	   sc.close();
 	 printBoundary(root);
     }	
 } 

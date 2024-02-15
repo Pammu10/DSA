@@ -29,8 +29,7 @@ public class StockSpan {
         for (int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
-        sc.close();
-        int S[] = new int[n];
+        sc.close();        int S[] = new int[n];
         calculate(arr, n, S);
         printArray(S);
     }

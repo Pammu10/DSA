@@ -70,7 +70,7 @@ void push(int x) {
 
 // Output 
 
-// 6
+// 6]
 // 3
 //  Number Inserted: 3
 // 24
